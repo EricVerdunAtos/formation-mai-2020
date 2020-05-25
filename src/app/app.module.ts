@@ -7,6 +7,8 @@ import { IconsModule } from './icons/icons.module';
 import { SharedModule } from './shared/shared.module';
 import { TextModule } from './text/text.module';
 import { UiModule } from './ui/ui.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { UiModule } from './ui/ui.module';
     TextModule,
     IconsModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
