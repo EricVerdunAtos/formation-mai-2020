@@ -9,6 +9,7 @@ import { TextModule } from './text/text.module';
 import { UiModule } from './ui/ui.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginModule } from './login/login.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   imports: [
     BrowserModule,
+    LoginModule,
     AppRoutingModule,
     UiModule,
     TextModule,
