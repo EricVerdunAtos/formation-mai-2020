@@ -12,8 +12,8 @@
         <th>{{ item.client }}</th>
         <th>{{ item.nbJours }}</th>
         <th>{{ item.tjmHt | currency: 'EUR' }}</th>
-        <th>{{ item.totalHt() | currency: 'EUR' }}</th>
-        <th>{{ item.totalTtc() | currency: 'EUR' }}</th>
+        <th>{{ item | total | currency: 'EUR' }}</th>
+        <th>{{ item | total : 'ttc' | currency: 'EUR' }}</th>
         <th>{{ item.state }}</th>
       </tr>
     </tbody>
