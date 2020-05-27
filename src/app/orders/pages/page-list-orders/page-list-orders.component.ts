@@ -3,6 +3,7 @@ import { OrdersService } from '../../services/orders.service';
 import { Order } from 'src/app/shared/models/order';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { Btn } from 'src/app/shared/interfaces/btn';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-page-list-orders',
@@ -10,12 +11,14 @@ import { Btn } from 'src/app/shared/interfaces/btn';
   styleUrls: ['./page-list-orders.component.scss']
 })
 export class PageListOrdersComponent implements OnInit {
-  public collection: Order[];
+  // public collection: Order[];
+  public collection$: Observable<Order[]>;
   public headers: string[];
   public btnRoute: Btn;
   public btnHref: Btn;
   public btnAction: Btn;
   public states = Object.values(StateOrder);
+  // sub: Subscription;
   constructor(private os: OrdersService) { }
 
   ngOnInit(): void {
@@ -31,10 +34,10 @@ export class PageListOrdersComponent implements OnInit {
       label: 'Open dialogue',
       action: true
     };
-    this.os.collection.subscribe((datas) => {
-      // console.log(datas);
-      this.collection = datas;
-    });
+    this.collection$ = this.os.collection;
+    // this.sub = this.os.collection.subscribe((datas) => {
+    //   this.collection = datas;
+    // });
     this.headers = [
       'Type',
       'Client',
@@ -59,7 +62,10 @@ export class PageListOrdersComponent implements OnInit {
 
   public openPopUp() {
     console.log("Open popup");
+  }
 
+  ngOnDestroy() {
+        // this.sub.unsubscribe();
   }
 
 }

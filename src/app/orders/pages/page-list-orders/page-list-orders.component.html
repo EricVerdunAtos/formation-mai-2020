@@ -1,4 +1,4 @@
-<app-table-light *ngIf="collection" [headers]="headers">
+<app-table-light *ngIf="collection$ | async as collection" [headers]="headers">
 
   <tr *ngFor="let item of collection">
     <th>{{ item.typePresta }}</th>
