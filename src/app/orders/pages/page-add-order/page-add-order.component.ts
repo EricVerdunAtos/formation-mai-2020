@@ -25,6 +25,7 @@ export class PageAddOrderComponent implements OnInit {
   public add(item: Order) {
     this.os.add(item)
       .subscribe(res => {
+
       // redirection vers la route orders
       // this.router.navigate(['orders']);
       // redirection relative par rapport à la route sur laquelle je suis

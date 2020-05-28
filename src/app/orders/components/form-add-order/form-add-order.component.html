@@ -3,11 +3,14 @@
     <div class="form-group">
       <label for="type">type</label>
       <input formControlName="typePresta" type="text" class="form-control" id="type">
+      <div class="alert alert-danger" *ngIf="form.get('typePresta').invalid && form.get('typePresta').touched">Champs invalid</div>
     </div>
 
     <div class="form-group">
       <label for="client">client</label>
       <input formControlName="client" type="text" class="form-control" id="client">
+      <div class="alert alert-danger" *ngIf="form.get('client').invalid && form.get('client').touched">Champs invalid</div>
+
     </div>
 
     <div class="form-group">
@@ -37,6 +40,6 @@
       <textarea formControlName="comment" type="number" class="form-control" id="comment"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
