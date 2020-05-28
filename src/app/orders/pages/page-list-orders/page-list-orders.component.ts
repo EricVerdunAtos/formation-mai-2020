@@ -18,10 +18,16 @@ export class PageListOrdersComponent implements OnInit {
   public btnHref: Btn;
   public btnAction: Btn;
   public states = Object.values(StateOrder);
+
+  public title: string;
+  public subtitle: string;
+
   // sub: Subscription;
   constructor(private os: OrdersService) { }
 
   ngOnInit(): void {
+    this.title = "Orders";
+    this.subtitle = "All orders";
     this.btnRoute = {
       label: "Add an order",
       route: "add"

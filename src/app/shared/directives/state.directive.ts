@@ -5,7 +5,7 @@ import { StateOrder } from '../enums/state-order.enum';
   selector: '[appState]'
 })
 export class StateDirective {
-  @Input() appState: StateOrder;
+  @Input() appState: any;
   @HostBinding('class') nomClass: string;
   constructor() {
 

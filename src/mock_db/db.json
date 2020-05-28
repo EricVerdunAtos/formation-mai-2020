@@ -23,14 +23,14 @@
   ],
   "clients": [
     {
-      "state": "Active",
+      "state": "ACTIVE",
       "id": 1,
       "name": "Christophe2",
       "ca": 12000,
       "comment": "un comment pour client christophe2"
     },
     {
-      "state": "Active",
+      "state": "INACTIVE",
       "id": 2,
       "name": "Modis",
       "ca": 120000,

@@ -1,16 +1,15 @@
 @import 'theme';
 
 .table-dark {
-  .state-cancel {
+  .state-cancel, .state-inactive {
     background: $color-error;
   }
   .state-option {
     background: $color3;
   }
-  .state-confirmed {
+  .state-confirmed, .state-active {
     background: $color-success;
   }
-
 }
 
 app-template-a {
