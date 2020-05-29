@@ -3,7 +3,8 @@ import { OrdersService } from '../../services/orders.service';
 import { Order } from 'src/app/shared/models/order';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { Btn } from 'src/app/shared/interfaces/btn';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'app-page-list-orders',
@@ -12,7 +13,8 @@ import { Observable } from 'rxjs';
 })
 export class PageListOrdersComponent implements OnInit {
   // public collection: Order[];
-  public collection$: Observable<Order[]>;
+  // public collection$: Observable<Order[]>;
+  public collection$: Subject<Order[]> = new Subject();
   public headers: string[];
   public btnRoute: Btn;
   public btnHref: Btn;
@@ -22,12 +24,17 @@ export class PageListOrdersComponent implements OnInit {
   public title: string;
   public subtitle: string;
 
+  public datas: Observable<Data>;
+
   // sub: Subscription;
-  constructor(private os: OrdersService) { }
+  constructor(
+    private os: OrdersService,
+    public route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.title = "Orders";
-    this.subtitle = "All orders";
+    // this.title = "Orders";
+    // this.subtitle = "All orders";
     this.btnRoute = {
       label: "Add an order",
       route: "add"
@@ -40,7 +47,9 @@ export class PageListOrdersComponent implements OnInit {
       label: 'Open dialogue',
       action: true
     };
-    this.collection$ = this.os.collection;
+    this.os.collection.subscribe(col => {
+      this.collection$.next(col);
+    });
     // this.sub = this.os.collection.subscribe((datas) => {
     //   this.collection = datas;
     // });
@@ -68,6 +77,17 @@ export class PageListOrdersComponent implements OnInit {
 
   public openPopUp() {
     console.log("Open popup");
+  }
+
+  public delete(item: Order) {
+
+    this.os.delete(item).subscribe(res => {
+
+      this.os.collection.subscribe(col => {
+        this.collection$.next(col);
+      })
+
+    })
   }
 
   ngOnDestroy() {

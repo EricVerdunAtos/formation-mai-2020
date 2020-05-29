@@ -13,7 +13,7 @@
 - validation de formulaires
 - passer des datas dans le route
 - récupérer les datas avec ActivateRoute
-- TP : sous navigation dans une page avec routes enfants
-- TP : exemple BehaviorSubject et Subject
 - TP : partie delete(Observables chauds)
 - TP : partie edit(passage de datas dans l'url) et ActivatedRoute pour récupérer les datas
+- TP : sous navigation dans une page avec routes enfants
+- TP : exemple BehaviorSubject et Subject

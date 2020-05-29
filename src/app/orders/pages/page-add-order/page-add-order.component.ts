@@ -18,8 +18,13 @@ export class PageAddOrderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.title = "Orders";
-    this.subtitle = "Add an order";
+
+    this.route.data.subscribe(datas => {
+      this.title = datas.title;
+      this.subtitle = datas.subtitle;
+      console.log(datas);
+
+    })
   }
 
   public add(item: Order) {

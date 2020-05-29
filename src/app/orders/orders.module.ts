@@ -8,14 +8,13 @@ import { PageAddOrderComponent } from './pages/page-add-order/page-add-order.com
 import { PageListOrdersComponent } from './pages/page-list-orders/page-list-orders.component';
 
 
-
 @NgModule({
   declarations: [PageListOrdersComponent, PageAddOrderComponent, FormAddOrderComponent],
   imports: [
     CommonModule,
     OrdersRoutingModule,
     SharedModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ]
 })
 export class OrdersModule { }

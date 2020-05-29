@@ -4,30 +4,11 @@
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "CONFIRMED",
-      "typePresta": "formation",
-      "client": "M2i",
-      "comment": "merci m2i",
-      "id": 2
-    },
-    {
-      "tjmHt": 1200,
-      "nbJours": 1,
-      "tva": 20,
       "state": "CANCEL",
       "typePresta": "formation",
       "client": "Modis",
       "comment": "merci modis",
       "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
     },
     {
       "tjmHt": 500,
@@ -40,13 +21,13 @@
       "id": 7
     },
     {
-      "tjmHt": 500,
-      "nbJours": 1,
+      "tjmHt": 496,
+      "nbJours": 2,
       "tva": 20,
-      "state": "OPTION",
-      "typePresta": null,
-      "client": null,
-      "comment": null,
+      "state": "CANCEL",
+      "typePresta": "type",
+      "client": "client",
+      "comment": "commentaire",
       "id": 8
     }
   ],
