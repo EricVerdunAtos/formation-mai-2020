@@ -1,22 +1,12 @@
 {
   "orders": [
     {
-      "tjmHt": 1200,
-      "nbJours": 1,
-      "tva": 20,
-      "state": "CANCEL",
-      "typePresta": "formation",
-      "client": "Modis",
-      "comment": "merci modis",
-      "id": 3
-    },
-    {
       "tjmHt": 500,
       "nbJours": 1,
       "tva": 20,
-      "state": "OPTION",
-      "typePresta": "test",
-      "client": "test",
+      "state": "CONFIRMED",
+      "typePresta": "test2",
+      "client": "test2",
       "comment": "test",
       "id": 7
     },

@@ -58,4 +58,7 @@ export class OrdersService {
   }
 
   // get item by id from collection
+  public getItemById(id: string): Observable<Order> {
+    return this.http.get<Order>(`${this.urlApi}orders/${id}`);
+  }
 }

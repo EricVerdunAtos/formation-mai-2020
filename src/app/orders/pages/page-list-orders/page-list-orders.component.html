@@ -13,7 +13,11 @@
         </select>
       </td>
 
-      <app-icon-delete (click)="delete(item)"></app-icon-delete>
+      <td>
+        <app-icon-delete (click)="delete(item)"></app-icon-delete>
+        <app-icon-edit (click)="edit(item)"></app-icon-edit>
+      </td>
+
     </tr>
   </app-table-light>
   <app-btn [label]="btnRoute.label" [route]="btnRoute.route"></app-btn>
